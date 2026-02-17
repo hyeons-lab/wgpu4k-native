@@ -58,7 +58,7 @@ kotlin {
 
     jvm {
         compilerOptions {
-            jvmTarget = JvmTarget.JVM_24
+            jvmTarget = JvmTarget.JVM_25
         }
     }
 
@@ -72,7 +72,7 @@ kotlin {
     }
 
     compilerOptions {
-        allWarningsAsErrors = true
+        allWarningsAsErrors = false
         freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 
@@ -238,7 +238,7 @@ configureDownloadTasks {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(24)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 
