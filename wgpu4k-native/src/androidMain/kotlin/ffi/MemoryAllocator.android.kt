@@ -1,7 +1,7 @@
 package ffi
 
-import java.lang.foreign.SegmentAllocator
-import java.lang.foreign.ValueLayout
+import com.hyeonslab.foreign.SegmentAllocator
+import com.hyeonslab.foreign.ValueLayout
 
 actual class MemoryAllocator : AutoCloseable {
 

@@ -1,4 +1,4 @@
-package java.lang.foreign
+package com.hyeonslab.foreign
 
 import com.sun.jna.Pointer
 import ffi.JnaArena

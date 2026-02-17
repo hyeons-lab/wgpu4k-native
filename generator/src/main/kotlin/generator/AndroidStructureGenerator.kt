@@ -32,7 +32,7 @@ private val headerAndroid = """
     import ffi.CStructure
     import ffi.MemoryAllocator
     import ffi.toAddress
-    import java.lang.foreign.AddressLayout
+    import com.hyeonslab.foreign.AddressLayout
     
     
 """.trimIndent()
