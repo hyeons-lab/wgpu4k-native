@@ -433,7 +433,7 @@ sealed class WGPUColor(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Struc
 sealed class WGPUColorTargetState(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
 	@JvmField var nextInChain: com.sun.jna.Pointer? = null
 	@JvmField var format: Int = 0
-	@JvmField var blend: WGPUBlendState.ByReference?? = null
+	@JvmField var blend: WGPUBlendState.ByReference? = null
 	@JvmField var writeMask: Long = 0L
 	override fun getFieldOrder() = listOf("nextInChain", "format", "blend", "writeMask")
 
@@ -572,7 +572,7 @@ sealed class WGPUCompilationMessage(pointer: com.sun.jna.Pointer? = null) : com.
 sealed class WGPUComputePassDescriptor(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
 	@JvmField var nextInChain: com.sun.jna.Pointer? = null
 	@JvmField var label: WGPUStringView.ByValue = WGPUStringView.ByValue()
-	@JvmField var timestampWrites: WGPUComputePassTimestampWrites.ByReference?? = null
+	@JvmField var timestampWrites: WGPUComputePassTimestampWrites.ByReference? = null
 	override fun getFieldOrder() = listOf("nextInChain", "label", "timestampWrites")
 
 	class ByReference(pointer: com.sun.jna.Pointer? = null) : WGPUComputePassDescriptor(pointer), com.sun.jna.Structure.ByReference {
@@ -811,7 +811,7 @@ sealed class WGPUQueueDescriptor(pointer: com.sun.jna.Pointer? = null) : com.sun
  * @suppress
  */
 sealed class WGPUDeviceLostCallbackInfo(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var nextInChain: WGPUChainedStruct.ByReference?? = null
+	@JvmField var nextInChain: WGPUChainedStruct.ByReference? = null
 	@JvmField var mode: Int = 0
 	@JvmField var callback: com.sun.jna.Callback? = null
 	@JvmField var userdata1: com.sun.jna.Pointer? = null
@@ -843,7 +843,7 @@ sealed class WGPUDeviceLostCallbackInfo(pointer: com.sun.jna.Pointer? = null) : 
  * @suppress
  */
 sealed class WGPUUncapturedErrorCallbackInfo(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var nextInChain: WGPUChainedStruct.ByReference?? = null
+	@JvmField var nextInChain: WGPUChainedStruct.ByReference? = null
 	@JvmField var callback: com.sun.jna.Callback? = null
 	@JvmField var userdata1: com.sun.jna.Pointer? = null
 	@JvmField var userdata2: com.sun.jna.Pointer? = null
@@ -876,7 +876,7 @@ sealed class WGPUDeviceDescriptor(pointer: com.sun.jna.Pointer? = null) : com.su
 	@JvmField var label: WGPUStringView.ByValue = WGPUStringView.ByValue()
 	@JvmField var requiredFeatureCount: Long = 0L
 	@JvmField var requiredFeatures: com.sun.jna.Pointer? = null
-	@JvmField var requiredLimits: WGPULimits.ByReference?? = null
+	@JvmField var requiredLimits: WGPULimits.ByReference? = null
 	@JvmField var defaultQueue: WGPUQueueDescriptor.ByValue = WGPUQueueDescriptor.ByValue()
 	@JvmField var deviceLostCallbackInfo: WGPUDeviceLostCallbackInfo.ByValue = WGPUDeviceLostCallbackInfo.ByValue()
 	@JvmField var uncapturedErrorCallbackInfo: WGPUUncapturedErrorCallbackInfo.ByValue = WGPUUncapturedErrorCallbackInfo.ByValue()
@@ -1480,9 +1480,9 @@ sealed class WGPURenderPassDescriptor(pointer: com.sun.jna.Pointer? = null) : co
 	@JvmField var label: WGPUStringView.ByValue = WGPUStringView.ByValue()
 	@JvmField var colorAttachmentCount: Long = 0L
 	@JvmField var colorAttachments: com.sun.jna.Pointer? = null
-	@JvmField var depthStencilAttachment: WGPURenderPassDepthStencilAttachment.ByReference?? = null
+	@JvmField var depthStencilAttachment: WGPURenderPassDepthStencilAttachment.ByReference? = null
 	@JvmField var occlusionQuerySet: com.sun.jna.Pointer? = null
-	@JvmField var timestampWrites: WGPURenderPassTimestampWrites.ByReference?? = null
+	@JvmField var timestampWrites: WGPURenderPassTimestampWrites.ByReference? = null
 	override fun getFieldOrder() = listOf("nextInChain", "label", "colorAttachmentCount", "colorAttachments", "depthStencilAttachment", "occlusionQuerySet", "timestampWrites")
 
 	class ByReference(pointer: com.sun.jna.Pointer? = null) : WGPURenderPassDescriptor(pointer), com.sun.jna.Structure.ByReference {
@@ -1514,7 +1514,7 @@ sealed class WGPURenderPassDescriptor(pointer: com.sun.jna.Pointer? = null) : co
  * @suppress
  */
 sealed class WGPUChainedStruct(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var next: WGPUChainedStruct.ByReference?? = null
+	@JvmField var next: WGPUChainedStruct.ByReference? = null
 	@JvmField var sType: Int = 0
 	override fun getFieldOrder() = listOf("next", "sType")
 
@@ -1629,9 +1629,9 @@ sealed class WGPURenderPipelineDescriptor(pointer: com.sun.jna.Pointer? = null) 
 	@JvmField var layout: com.sun.jna.Pointer? = null
 	@JvmField var vertex: WGPUVertexState.ByValue = WGPUVertexState.ByValue()
 	@JvmField var primitive: WGPUPrimitiveState.ByValue = WGPUPrimitiveState.ByValue()
-	@JvmField var depthStencil: WGPUDepthStencilState.ByReference?? = null
+	@JvmField var depthStencil: WGPUDepthStencilState.ByReference? = null
 	@JvmField var multisample: WGPUMultisampleState.ByValue = WGPUMultisampleState.ByValue()
-	@JvmField var fragment: WGPUFragmentState.ByReference?? = null
+	@JvmField var fragment: WGPUFragmentState.ByReference? = null
 	override fun getFieldOrder() = listOf("nextInChain", "label", "layout", "vertex", "primitive", "depthStencil", "multisample", "fragment")
 
 	class ByReference(pointer: com.sun.jna.Pointer? = null) : WGPURenderPipelineDescriptor(pointer), com.sun.jna.Structure.ByReference {
@@ -2432,7 +2432,7 @@ sealed class WGPUInstanceExtras(pointer: com.sun.jna.Pointer? = null) : com.sun.
  * @suppress
  */
 sealed class WGPUChainedStructOut(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var next: WGPUChainedStructOut.ByReference?? = null
+	@JvmField var next: WGPUChainedStructOut.ByReference? = null
 	@JvmField var sType: Int = 0
 	override fun getFieldOrder() = listOf("next", "sType")
 
@@ -2455,7 +2455,7 @@ sealed class WGPUChainedStructOut(pointer: com.sun.jna.Pointer? = null) : com.su
  * @suppress
  */
 sealed class WGPUBufferMapCallbackInfo(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var nextInChain: WGPUChainedStruct.ByReference?? = null
+	@JvmField var nextInChain: WGPUChainedStruct.ByReference? = null
 	@JvmField var mode: Int = 0
 	@JvmField var callback: com.sun.jna.Callback? = null
 	@JvmField var userdata1: com.sun.jna.Pointer? = null
@@ -2487,7 +2487,7 @@ sealed class WGPUBufferMapCallbackInfo(pointer: com.sun.jna.Pointer? = null) : c
  * @suppress
  */
 sealed class WGPUCompilationInfoCallbackInfo(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var nextInChain: WGPUChainedStruct.ByReference?? = null
+	@JvmField var nextInChain: WGPUChainedStruct.ByReference? = null
 	@JvmField var mode: Int = 0
 	@JvmField var callback: com.sun.jna.Callback? = null
 	@JvmField var userdata1: com.sun.jna.Pointer? = null
@@ -2519,7 +2519,7 @@ sealed class WGPUCompilationInfoCallbackInfo(pointer: com.sun.jna.Pointer? = nul
  * @suppress
  */
 sealed class WGPUCreateComputePipelineAsyncCallbackInfo(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var nextInChain: WGPUChainedStruct.ByReference?? = null
+	@JvmField var nextInChain: WGPUChainedStruct.ByReference? = null
 	@JvmField var mode: Int = 0
 	@JvmField var callback: com.sun.jna.Callback? = null
 	@JvmField var userdata1: com.sun.jna.Pointer? = null
@@ -2551,7 +2551,7 @@ sealed class WGPUCreateComputePipelineAsyncCallbackInfo(pointer: com.sun.jna.Poi
  * @suppress
  */
 sealed class WGPUCreateRenderPipelineAsyncCallbackInfo(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var nextInChain: WGPUChainedStruct.ByReference?? = null
+	@JvmField var nextInChain: WGPUChainedStruct.ByReference? = null
 	@JvmField var mode: Int = 0
 	@JvmField var callback: com.sun.jna.Callback? = null
 	@JvmField var userdata1: com.sun.jna.Pointer? = null
@@ -2583,7 +2583,7 @@ sealed class WGPUCreateRenderPipelineAsyncCallbackInfo(pointer: com.sun.jna.Poin
  * @suppress
  */
 sealed class WGPUPopErrorScopeCallbackInfo(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var nextInChain: WGPUChainedStruct.ByReference?? = null
+	@JvmField var nextInChain: WGPUChainedStruct.ByReference? = null
 	@JvmField var mode: Int = 0
 	@JvmField var callback: com.sun.jna.Callback? = null
 	@JvmField var userdata1: com.sun.jna.Pointer? = null
@@ -2615,7 +2615,7 @@ sealed class WGPUPopErrorScopeCallbackInfo(pointer: com.sun.jna.Pointer? = null)
  * @suppress
  */
 sealed class WGPUQueueWorkDoneCallbackInfo(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var nextInChain: WGPUChainedStruct.ByReference?? = null
+	@JvmField var nextInChain: WGPUChainedStruct.ByReference? = null
 	@JvmField var mode: Int = 0
 	@JvmField var callback: com.sun.jna.Callback? = null
 	@JvmField var userdata1: com.sun.jna.Pointer? = null
@@ -2647,7 +2647,7 @@ sealed class WGPUQueueWorkDoneCallbackInfo(pointer: com.sun.jna.Pointer? = null)
  * @suppress
  */
 sealed class WGPURequestAdapterCallbackInfo(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var nextInChain: WGPUChainedStruct.ByReference?? = null
+	@JvmField var nextInChain: WGPUChainedStruct.ByReference? = null
 	@JvmField var mode: Int = 0
 	@JvmField var callback: com.sun.jna.Callback? = null
 	@JvmField var userdata1: com.sun.jna.Pointer? = null
@@ -2679,7 +2679,7 @@ sealed class WGPURequestAdapterCallbackInfo(pointer: com.sun.jna.Pointer? = null
  * @suppress
  */
 sealed class WGPURequestDeviceCallbackInfo(pointer: com.sun.jna.Pointer? = null) : com.sun.jna.Structure(pointer) {
-	@JvmField var nextInChain: WGPUChainedStruct.ByReference?? = null
+	@JvmField var nextInChain: WGPUChainedStruct.ByReference? = null
 	@JvmField var mode: Int = 0
 	@JvmField var callback: com.sun.jna.Callback? = null
 	@JvmField var userdata1: com.sun.jna.Pointer? = null

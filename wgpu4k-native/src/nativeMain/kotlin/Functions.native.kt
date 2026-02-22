@@ -7,7 +7,6 @@ import ffi.NativeAddress
 import ffi.ArrayHolder
 import ffi.CallbackHolder
 import kotlinx.cinterop.ExperimentalForeignApi
-import kotlinx.cinterop.reinterpret
 import kotlinx.cinterop.toCPointer
 
 
@@ -21,7 +20,7 @@ actual fun wgpuGetInstanceCapabilities(capabilities: WGPUInstanceCapabilities?):
 }
 
 actual fun wgpuDevicePoll(device: WGPUDevice?, wait: Boolean, wrappedSubmissionIndex: NativeAddress?): Boolean {
-	return webgpu.native.wgpuDevicePoll(device?.handler?.reinterpret(), wait.toUInt(), wrappedSubmissionIndex?.pointer?.reinterpret())
+	return webgpu.native.wgpuDevicePoll(device?.handler?.reinterpret(), wait.toUInt(), wrappedSubmissionIndex?.pointer)
 		.toBoolean()
 }
 

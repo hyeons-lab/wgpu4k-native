@@ -70,7 +70,7 @@ private fun NativeModel.Type.toJnaType(): String = when (this) {
 
     is NativeModel.Primitive.UInt16 -> "Short"
     is NativeModel.Primitive -> toPrimitiveKotlinType()
-    is NativeModel.Reference.Structure -> "${name}.ByReference?"
+    is NativeModel.Reference.Structure -> "${name}.ByReference"
     is NativeModel.Reference.StructureField -> "${name}.ByValue"
     is NativeModel.Reference.Callback -> "com.sun.jna.Callback"
     else -> "com.sun.jna.Pointer"
